@@ -114,6 +114,7 @@ class FreeplayState extends MusicBeatState
 			var songText:Alphabet = new Alphabet(90, 320, songs[i].songName, true);
 			songText.isMenuItem = true;
 			songText.targetY = i - curSelected;
+			songText.screenCenter(X);
 			grpSongs.add(songText);
 
 			var maxWidth = 980;
@@ -189,10 +190,10 @@ class FreeplayState extends MusicBeatState
 		#if PRELOAD_ALL
 			#if android
 			var leText:String = "Press X to listen to the Song / Press C to open the Gameplay Changers Menu / Press Y to Reset your Score and Accuracy.";
-			var size:Int = 16;
+			var size:Int = 20;
 			#else
 			var leText:String = "Press SPACE to listen to the Song / Press CTRL to open the Gameplay Changers Menu / Press RESET to Reset your Score and Accuracy.";
-			var size:Int = 16;
+			var size:Int = 20;
 			#end
 		#else
 			#if android
@@ -200,7 +201,7 @@ class FreeplayState extends MusicBeatState
 			var size:Int = 18;
 			#else
 			var leText:String = "Press CTRL to open the Gameplay Changers Menu / Press RESET to Reset your Score and Accuracy.";
-			var size:Int = 18;
+			var size:Int = 20;
 			#end
 		#end
 		var text:FlxText = new FlxText(textBG.x, textBG.y + 4, FlxG.width, leText, size);
